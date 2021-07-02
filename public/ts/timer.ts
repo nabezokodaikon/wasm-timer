@@ -8,6 +8,8 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
   // return new Promise<void>(resolve => setTimeout(resolve, ms))
 // }
 
+// (globalThis as any).sleep = sleep;
+
 async function run() {
   const wasm = await fetch("public/pkg/wasm_timer_bg.wasm");
   await init(wasm);
